@@ -31,7 +31,7 @@ executeCmd('qcloudcli snapshot DescribeSnapshots')
 					console.log("all done!");
 
 					// notify via WeChat
-					wechatNotify.notifySuccessMessage()
+					wechatNotify.notifySuccessMessage('qcloudbackup succeeded', 'Backing up is successful', 'No futher action needed.')
 						.then((res) => {
 							console.log('Succesfully notified via WeChat message');
 						})
@@ -43,7 +43,7 @@ executeCmd('qcloudcli snapshot DescribeSnapshots')
 					console.log('Error: ', err);
 
 					// notify via WeChat
-					wechatNotify.notifyFailMessage(err.message)
+					wechatNotify.notifyFailMessage("qcloudbackup failed", 'Backing up', 'High', err.message, 'Check server log for this process ASAP!')
 						.then((res) => {
 							console.log('Succesfully notified error message via WeChat message');
 						})

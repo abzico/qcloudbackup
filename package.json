@@ -25,6 +25,6 @@
   "homepage": "https://github.com/haxpor/qcloudbackup#readme",
   "private": true,
   "dependencies": {
-    "wechat-notifier": "^1.0.1"
+    "wechat-notifier": "^1.1.0"
   }
 }
