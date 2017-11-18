@@ -1,0 +1,30 @@
+{
+  "name": "qcloudbackup",
+  "version": "1.0.0",
+  "description": "Backing up script for QCloud's CVM snapshots with customizable parameters implemented in NodeJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/haxpor/qcloudbackup.git"
+  },
+  "keywords": [
+    "qcloud",
+    "backup",
+    "script",
+    "nodejs",
+    "js"
+  ],
+  "author": "Wasin Thonkaew",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/haxpor/qcloudbackup/issues"
+  },
+  "homepage": "https://github.com/haxpor/qcloudbackup#readme",
+  "private": true,
+  "dependencies": {
+    "wechat-notifier": "^1.0.1"
+  }
+}

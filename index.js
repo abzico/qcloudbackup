@@ -8,6 +8,7 @@
 
 require('./promise-retry.js');
 var exec = require('child_process').exec;
+const wechatNotify = require('wechat-notifier');
 
 // define storageIds we're interested in
 var storageIds = ['disk-9346zr34', 'disk-8ep6r2v8'];
@@ -28,9 +29,27 @@ executeCmd('qcloudcli snapshot DescribeSnapshots')
 			mainWorker(resultObj, worker)
 				.then(() => {
 					console.log("all done!");
+
+					// notify via WeChat
+					wechatNotify.notifySuccessMessage()
+						.then((res) => {
+							console.log('Succesfully notified via WeChat message');
+						})
+						.catch((err) => {
+							console.log('Can\'t notify success message via WeChat: ' + err.message);
+						});
 				})
 				.catch((err) => {
 					console.log('Error: ', err);
+
+					// notify via WeChat
+					wechatNotify.notifyFailMessage(err.message)
+						.then((res) => {
+							console.log('Succesfully notified error message via WeChat message');
+						})
+						.catch((err) => {
+							console.log('Can\'t notify error message via WeChat: ' + err.message);
+						});
 				});
 		}
 		catch(e) {
