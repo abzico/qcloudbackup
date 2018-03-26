@@ -47,9 +47,10 @@ You need to set all of above environment variables in order to make it works.
 	* `storageIds` -> define storageId to apply for backup. You need to define what's yours here.
 	* (optional) `kMaxSnapshots` -> define number of snapshots to be hold before deletion oldest one if a new snapshot needs to be created
 	* (optional) `kWaitBeforeCreation` -> time wait in millisecond just before CreateSnapshot operation will be cariied out, just for safety for consecutive snapshot creation
- 
-3. Execute `node index.js`
-4. (optional) Recommend to automate it with cron job.
+
+3. Execute `npm install` to install all dependencies.
+4. Execute `node index.js` to run the program thus begin backing up process.
+5. (optional) Recommend to automate it with cron job.
 
 # License
 
