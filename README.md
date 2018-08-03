@@ -46,9 +46,9 @@ You need to set all of above environment variables in order to make it works.
 
 	* `storageIds` -> define storageId to apply for backup. You need to define what's yours here.
 
-	You can loook for `storageIds` easily on QCloud's dashboard in _Cloud Virtual Machine_ and _Cloud Block Storage_. Or via API which needs slightly effort.
+		You can loook for `storageIds` easily on QCloud's dashboard in _Cloud Virtual Machine_ and _Cloud Block Storage_. Or via API which needs slightly effort.
 
-	To get `storageIds` values from API. Execute `qcloudcli cbs DescribeCbsStorages` then look at field `storageId` for each item. Select ones you want then put it into `index.js` file.
+		To get `storageIds` values from API. Execute `qcloudcli cbs DescribeCbsStorages` then look at field `storageId` for each item. Select ones you want then put it into `index.js` file.
 	* (optional) `kMaxSnapshots` -> define number of snapshots to be hold before deletion oldest one if a new snapshot needs to be created
 	* (optional) `kWaitBeforeCreation` -> time wait in millisecond just before CreateSnapshot operation will be cariied out, just for safety for consecutive snapshot creation
 
